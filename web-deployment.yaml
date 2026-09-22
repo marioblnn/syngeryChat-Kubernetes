@@ -11,7 +11,7 @@ metadata:
     app: synergychat-web
   name: synergychat-web
   namespace: default
-  resourceVersion: "16137"
+  resourceVersion: "66869"
   uid: 3751ee99-0f9b-4fa0-9e21-e710d3ce6a5b
 spec:
   progressDeadlineSeconds: 600
@@ -34,6 +34,9 @@ spec:
       - image: docker.io/bootdotdev/synergychat-web:latest
         imagePullPolicy: Always
         name: synergychat-web
+        envFrom:
+          - configMapRef:
+              name: synergychat-web-configmap
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
@@ -51,8 +54,8 @@ status:
     reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
-  - lastTransitionTime: "2026-09-16T09:46:37Z"
-    lastUpdateTime: "2026-09-16T09:46:37Z"
+  - lastTransitionTime: "2026-09-18T09:38:42Z"
+    lastUpdateTime: "2026-09-18T09:38:42Z"
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
